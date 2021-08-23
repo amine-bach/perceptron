@@ -2,7 +2,7 @@
 #include <pybind11/stl.h>
 #include <pybind11/eigen.h>
 
-#include "../src/layer.h"
+#include "layer.h"
 
 namespace py = pybind11;
 using namespace pybind11::literals;

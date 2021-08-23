@@ -1,4 +1,5 @@
 src/release/
+release/
 
-# the file will be copied from src in wrap
-wrap/
+# the virtualenv
+perceptron_venv/
