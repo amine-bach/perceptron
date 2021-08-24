@@ -4,14 +4,14 @@
 #       - the lib is copied to be used by perceptron_venv
 # - test_perceptron.py executed using perceptron_venv
 
-gitpod_workspace=/workspace/gitpod_1
+gitpod_workspace=/workspace/perceptron
 perceptron_venv=${gitpod_workspace}/perceptron_venv
 
 echo "----------"
 # Create virtual_env if necessary
 if [ ! -d ${perceptron_venv} ];then
-    python3 -m venv perceptron_venv --system-site-package
-    echo "perceptron_venv in ${venvs_path} created in $(pwd)."
+    python3 -m venv $perceptron_venv --system-site-package
+    echo "perceptron_venv in ${perceptron_venv} created in $(pwd)."
 
     source ${perceptron_venv}/bin/activate
     python -m pip install -r ${gitpod_workspace}/scripts/requirements.txt
@@ -51,4 +51,4 @@ echo
 
 echo "----------"
 source ${perceptron_venv}/bin/activate
-python test_perceptron.py
+python ${gitpod_workspace}/test_perceptron.py
