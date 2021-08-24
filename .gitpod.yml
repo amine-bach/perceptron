@@ -8,5 +8,5 @@ image:
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'install.sh' && ./scripts/install.sh # runs during prebuild
+  - init: echo 'install.sh -c' && ./scripts/install.sh -c # runs during prebuild
     command: echo 'start script'

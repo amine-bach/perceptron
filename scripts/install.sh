@@ -25,14 +25,14 @@ echo "----------"
 if [[ $1 = "-c" ]]
 then
     # Compilation C++ from scratch
-    if [ -d "release" ];then
-        rm -r release    
-        echo "Clear release"
+    if [ -d "${gitpod_workspace}/release" ];then
+        rm -r ${gitpod_workspace}/release    
+        echo "Clear ${gitpod_workspace}/release"
     else
-        echo "Create release"
+        echo "Create ${gitpod_workspace}/release"
     fi
 
-    mkdir release && cd release
+    mkdir ${gitpod_workspace}/release && cd ${gitpod_workspace}/release
     cmake .. && make 
 
     # Update virtual_env
