@@ -1,9 +1,14 @@
+# - Create the perceptron_venv virtualenv in /workspace/gitpod
+# - If argument -c is given :
+#       - compilation -> lib 'perceptron.cpython-38-x86_64-linux-gnu.so' is created
+#       - the lib is copied to be used by perceptron_venv
+# - test_perceptron.py executed using perceptron_venv
 
 gitpod_workspace=/workspace/gitpod_1
 perceptron_venv=${gitpod_workspace}/perceptron_venv
 
 echo "----------"
-# create virtual_env if necessary
+# Create virtual_env if necessary
 if [ ! -d ${perceptron_venv} ];then
     python3 -m venv perceptron_venv --system-site-package
     echo "perceptron_venv in ${venvs_path} created in $(pwd)."
@@ -16,8 +21,8 @@ else
 fi
 echo "----------"
 
-#Compile and create python lib in perceptron_venv
-if [[ $1 = "compile" ]]
+# Compile and create python lib in perceptron_venv
+if [[ $1 = "-c" ]]
 then
     # Compilation C++ from scratch
     if [ -d "release" ];then
@@ -30,7 +35,7 @@ then
     mkdir release && cd release
     cmake .. && make 
 
-    # update virtual_env
+    # Update virtual_env
     version_python=(`ls ${perceptron_venv}/lib`)   
     echo "version_python=$version_python"    
     perceptron_package=${perceptron_venv}/lib/$version_python/site-packages/
