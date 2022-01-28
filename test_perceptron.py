@@ -4,7 +4,9 @@ import numpy as np
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
-print(f"==> Current Python : {sys.executable}")
+print(f"test_perceptron.py : current Python executable is {sys.executable}")
+
+print(f"test_perceptron.py : load MNIST dataset")
 
 # Récupération des images au format numpy
 # ---------------------------------------
@@ -38,11 +40,16 @@ print(f"y_A.shape : {y_A.shape}")
 print(f"x_B.shape : {x_B.shape}")
 print(f"y_B.shape : {y_B.shape}")
 
+print(f"test_perceptron.py : MNIST dataset is Ok")
+
 # Perceptron Cpp
 # --------------
 from perceptron import Layer
 
+print(f"test_perceptron.py : test the lib created in Cpp")
+
 l = Layer(0, 0)
 print( l )
 
+print(f"test_perceptron.py : end")
 
